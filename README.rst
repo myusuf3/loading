@@ -1,7 +1,7 @@
 loading
 =======
 
-you need loading bars for long running processing in the cli.
+you need loading bars for long running processes in the cli.
 
 .. image:: http://i226.photobucket.com/albums/dd124/akoparinto/gif/loading13-1.gif
 
