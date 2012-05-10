@@ -12,10 +12,10 @@ class Loading(object):
 
     def __init__(self, full, loading_message='loading...', load_char='#'):
         self.start = 0
-        self.write = sys.stdout
+        self.pipe = sys.stdout
         self.full = full
         self.load_char = load_char
-        self.write.write('\n' + loading_message +'\n')
+        self.pipe.write('\n' + loading_message +'\n')
 
     def complete(self, part):    
         part = min(part, self.full)
@@ -33,8 +33,8 @@ class Loading(object):
         for i in range(self.start, start):
             # write one more char for range
             # between previous and now
-            self.write.write(self.load_char)
-        self.write.flush()
+            self.pipe.write(self.load_char)
+        self.pipe.flush()
         self.start = start
         if progress == 100:
-            self.write.write("\n")
+            self.pipe.write("\n")
